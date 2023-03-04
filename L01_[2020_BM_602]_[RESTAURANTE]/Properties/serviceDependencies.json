@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "MSSQL16.SQLEXPRESS:MSSQL",
+      "dynamicId": null
+    }
+  }
+}
