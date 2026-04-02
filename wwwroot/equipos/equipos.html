@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Equipos - Restaurante</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* ===== Contenedor y tabla estilo Restaurante ===== */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        th, td {
+            padding: 12px 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #d35400;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fdf2e9;
+        }
+
+        form div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        form input, form select {
+            flex: 1;
+            min-width: 150px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button {
+            grid-column: 1 / -1;
+            padding: 12px 25px;
+            background-color: #d35400;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #e67e22;
+        }
+
+        #formMessage {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bubbles"></div>
+
+    <!-- Menú fijo -->
+    <nav>
+        <a href="../index.html">Inicio</a>
+        <a href="equipos.html">Equipos</a>
+        <a href="../marcas/marcas.html">Marcas</a>
+        <a href="../tipos/tipos.html">Tipos</a>
+        <a href="../estados/estados.html">Estados</a>
+        <a href="../inventario/inventario.html">Inventario</a>
+        <a href="../reportes/reportes.html">Reportes</a>
+    </nav>
+
+    <header style="text-align:center; padding:20px; z-index:10; position:relative;">
+        <h1>Gestión de Equipos - Restaurante</h1>
+    </header>
+
+    <div class="container">
+        <h2>Listado de Equipos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th><th>Nombre</th><th>Descripción</th><th>TipoEquipoId</th>
+                    <th>MarcaId</th><th>Modelo</th><th>Año Compra</th><th>Costo</th>
+                    <th>Vida Útil</th><th>EstadoEquipoId</th><th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="equiposTableBody"></tbody>
+        </table>
+
+        <h2>Agregar Nuevo Equipo</h2>
+        <form id="addEquipoForm">
+            <div>
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="descripcion" placeholder="Descripción" required>
+                <input type="number" name="tipoEquipoId" placeholder="Tipo Equipo ID">
+                <input type="number" name="marcaId" placeholder="Marca ID">
+                <input type="text" name="modelo" placeholder="Modelo" required>
+                <input type="number" name="anioCompra" placeholder="Año Compra">
+                <input type="number" name="costo" placeholder="Costo" step="0.01" required>
+                <input type="number" name="vidaUtil" placeholder="Vida Útil">
+                <input type="number" name="estadoEquipoId" placeholder="Estado Equipo ID">
+                <input type="text" name="estado" placeholder="Estado" required>
+            </div>
+            <button type="submit">Agregar Equipo</button>
+        </form>
+        <div id="formMessage"></div>
+    </div>
+
+    <div class="watermark">© Genesis Brito</div>
+
+    <script>
+        // ===== Crear burbujas automáticamente =====
+        const bubbleContainer = document.getElementById('bubbles');
+        for (let i = 0; i < 25; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            const size = Math.random() * 60 + 20;
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            bubble.style.left = Math.random() * 100 + 'vw';
+            bubble.style.animationDuration = 15 + Math.random() * 20 + 's';
+            bubble.style.animationDelay = Math.random() * 10 + 's';
+            bubbleContainer.appendChild(bubble);
+        }
+
+        const tbody = document.getElementById('equiposTableBody');
+
+        async function loadEquipos() {
+            tbody.innerHTML = '';
+            try {
+                const res = await fetch('/api/equipos');
+                const equipos = await res.json();
+                equipos.forEach(eq => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${eq.id}</td><td>${eq.nombre}</td><td>${eq.descripcion}</td>
+                        <td>${eq.tipoEquipoId || ''}</td><td>${eq.marcaId || ''}</td><td>${eq.modelo}</td>
+                        <td>${eq.anioCompra || ''}</td><td>${eq.costo}</td><td>${eq.vidaUtil || ''}</td>
+                        <td>${eq.estadoEquipoId || ''}</td><td>${eq.estado}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            } catch (err) { console.error(err); }
+        }
+        loadEquipos();
+
+        document.getElementById('addEquipoForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const data = {
+                nombre: form.nombre.value,
+                descripcion: form.descripcion.value,
+                tipoEquipoId: form.tipoEquipoId.value || null,
+                marcaId: form.marcaId.value || null,
+                modelo: form.modelo.value,
+                anioCompra: form.anioCompra.value || null,
+                costo: parseFloat(form.costo.value),
+                vidaUtil: form.vidaUtil.value || null,
+                estadoEquipoId: form.estadoEquipoId.value || null,
+                estado: form.estado.value
+            };
+
+            try {
+                const res = await fetch('/api/equipos', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (!res.ok) throw new Error('Error al agregar equipo');
+                document.getElementById('formMessage').innerText = '¡Equipo agregado exitosamente!';
+                document.getElementById('formMessage').style.color = 'green';
+                form.reset();
+                loadEquipos();
+            } catch (err) {
+                document.getElementById('formMessage').style.color = 'red';
+                document.getElementById('formMessage').innerText = 'No se pudo agregar el equipo.';
+                console.error(err);
+            }
+        });
+    </script>
+
+</body>
+</html>

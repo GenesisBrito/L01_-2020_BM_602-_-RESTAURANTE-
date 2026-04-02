@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurante - Gestión Integral</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="bubbles"></div>
+
+    <!-- Menú de inicio -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="equipos/equipos.html">Equipos</a>
+        <a href="marcas/marcas.html">Marcas</a>
+        <a href="tipos/tipos.html">Tipos</a>
+        <a href="estados/estados.html">Estados</a>
+        <a href="inventario/inventario.html">Inventario</a>
+        <a href="reportes/reportes.html">Reportes</a>
+    </nav>
+
+    <header>
+        <img src="images/gb.png" alt="Logo Restaurante">
+        <h1>Bienvenido al Sistema de Gestión del Restaurante</h1>
+    </header>
+
+    <div class="container">
+        <h2>Panel de Control</h2>
+        <p style="text-align:center;">Selecciona una sección para administrar tu restaurante</p>
+        <div class="panel">
+            <div class="card" onclick="window.location.href='equipos/equipos.html'">
+                <h3>Equipos</h3>
+                <p>Gestión completa de los equipos del restaurante</p>
+            </div>
+            <div class="card" onclick="window.location.href='marcas/marcas.html'">
+                <h3>Marcas</h3>
+                <p>Administrar las marcas de los equipos</p>
+            </div>
+            <div class="card" onclick="window.location.href='tipos/tipos.html'">
+                <h3>Tipos</h3>
+                <p>Definir los tipos de equipos</p>
+            </div>
+            <div class="card" onclick="window.location.href='estados/estados.html'">
+                <h3>Estados</h3>
+                <p>Actualizar los estados de los equipos</p>
+            </div>
+            <div class="card" onclick="window.location.href='inventario/inventario.html'">
+                <h3>Inventario</h3>
+                <p>Control de alimentos y productos almacenados</p>
+            </div>
+            <div class="card" onclick="window.location.href='reportes/reportes.html'">
+                <h3>Reportes</h3>
+                <p>Consulta estadísticas y reportes</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="watermark">© Genesis Brito</div>
+
+    <footer>
+        © 2026 - Sistema de Gestión del Restaurante | <img src="images/gb.png" alt="Marca de agua" style="height:20px; vertical-align:middle;">
+    </footer>
+
+    <script>
+        // Crear burbujas automáticamente
+        const bubbleContainer = document.getElementById('bubbles');
+        for (let i = 0; i < 25; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            const size = Math.random() * 60 + 20;
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            bubble.style.left = Math.random() * 100 + 'vw';
+            bubble.style.animationDuration = 15 + Math.random() * 20 + 's';
+            bubble.style.animationDelay = Math.random() * 10 + 's';
+            bubbleContainer.appendChild(bubble);
+        }
+    </script>
+
+</body>
+</html>

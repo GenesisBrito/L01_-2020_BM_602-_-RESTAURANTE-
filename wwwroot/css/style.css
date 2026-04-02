@@ -1,0 +1,137 @@
+/* ===== Reset y fuente ===== */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #fff7f0, #ffe5d9);
+}
+
+/* ===== Menú de inicio ===== */
+nav {
+    background-color: #d35400;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #e67e22;
+}
+
+header {
+    display: flex;
+    flex-direction: column; /* pone el logo arriba y el texto abajo */
+    align-items: center; /* centra horizontalmente */
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+header img {
+    width: 230px;
+    filter: drop-shadow(0 0 10px #ff9c45);
+}
+
+header h1 {
+    color: #a94402;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: #d35400;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* ===== Burbujas ===== */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 183, 77, 0.15);
+    animation: float 20s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) translateX(0) scale(1); }
+    50% { transform: translateY(50vh) translateX(30px) scale(1.1); }
+    100% { transform: translateY(-10vh) translateX(-30px) scale(0.9); }
+}
+
+#bubbles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* ===== Marca de agua ===== */
+.watermark {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: rgba(0,0,0,0.05);
+    pointer-events: none;
+    z-index: 1000;
+    user-select: none;
+    transform: rotate(-20deg);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: #555;
+}

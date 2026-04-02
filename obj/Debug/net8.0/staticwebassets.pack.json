@@ -1,0 +1,81 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/css/style.css",
+      "PackagePath": "staticwebassets/css/style.css"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/estados/estados.html",
+      "PackagePath": "staticwebassets/estados/estados.html"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/images/logo.png",
+      "PackagePath": "staticwebassets/images/logo.png"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/images/watermark.png",
+      "PackagePath": "staticwebassets/images/watermark.png"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/inventario/inventario.html",
+      "PackagePath": "staticwebassets/inventario/inventario.html"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/js/estados.js",
+      "PackagePath": "staticwebassets/js/estados.js"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/js/inventario.js",
+      "PackagePath": "staticwebassets/js/inventario.js"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/js/main.js",
+      "PackagePath": "staticwebassets/js/main.js"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/js/marcas.js",
+      "PackagePath": "staticwebassets/js/marcas.js"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/js/reportes.js",
+      "PackagePath": "staticwebassets/js/reportes.js"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/js/tipos.js",
+      "PackagePath": "staticwebassets/js/tipos.js"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/marcas/marcas.html",
+      "PackagePath": "staticwebassets/marcas/marcas.html"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/reportes/reportes.html",
+      "PackagePath": "staticwebassets/reportes/reportes.html"
+    },
+    {
+      "Id": "/Users/genesisbrito/Downloads/L01_-2020_BM_602-_-RESTAURANTE--master/L01_[2020_BM_602]_[RESTAURANTE]/wwwroot/tipos/tipos.html",
+      "PackagePath": "staticwebassets/tipos/tipos.html"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.L01_[2020_BM_602]_[RESTAURANTE].Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.L01_[2020_BM_602]_[RESTAURANTE].props",
+      "PackagePath": "build\\L01_[2020_BM_602]_[RESTAURANTE].props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.L01_[2020_BM_602]_[RESTAURANTE].props",
+      "PackagePath": "buildMultiTargeting\\L01_[2020_BM_602]_[RESTAURANTE].props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.L01_[2020_BM_602]_[RESTAURANTE].props",
+      "PackagePath": "buildTransitive\\L01_[2020_BM_602]_[RESTAURANTE].props"
+    }
+  ],
+  "ElementsToRemove": []
+}
